@@ -39,42 +39,25 @@ $('body').keydown(function(e)
     var left_position = $('#player').css('left');
 
     // Mort: Fonction reset position
-    
+
     function resetPosition() {
         $('#player').css("top", "10px");
         $('#player').css("left", "10px");
     }
 
-    // Ajout de la defaite: collision (top)
+    // Ajout de la defaite: collision (top et bottom)
 
-    if (top_position === '-10px') {
+    if (top_position === '-10px' || top_position === '690px') {
         alert(dead);
         resetPosition();
     }
-    ;
 
-    // Ajout de la defaite: collision (bottom)
+    // Ajout de la defaite: collision (left et right)
 
-    if (top_position === "690px") {
+    if (left_position === '-10px' || left_position === '990px') {
         alert(dead);
         resetPosition();
     }
-    ;
-    // Ajout de la defaite: collision (left)
-
-
-    if (left_position === '-10px') {
-        alert(dead);
-        resetPosition();
-    }
-    ;
-    // Ajout de la defaite: collision (right)
-
-    if (left_position === '990px') {
-        alert(dead);
-        resetPosition();
-    }
-    ;
 });
 
 
